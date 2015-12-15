@@ -9,7 +9,17 @@ public class PanMain extends JPanel{
     JLabel lblOutput;
     JButton btnUpdateLabel;
     public PanMain(){
-       lblOutput = new JLabel("Check out the label");
-       btnUpdateLabel = new JButton("Update the label");
+       lblOutput = new JLabel("This might be where a word goes");
+       btnUpdateLabel = new JButton("Could this be a letter button?");
+       add(lblOutput);
+       add(btnUpdateLabel);
+       setFocusable(true);
+       LabelChangeListener labelChange = new LabelChangeListener();
+       btnUpdateLabel.addActionListener(labelChange);
     }
+    class LabelChangeListener implements ActionListener {
+       public void actionPerformed(ActionEvent event) {
+       lblOutput.setText("Told you this could be where the word goes");
+       }
+}
 }

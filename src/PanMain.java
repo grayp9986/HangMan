@@ -21,5 +21,5 @@ public class PanMain extends JPanel{
        public void actionPerformed(ActionEvent event) {
        lblOutput.setText("Told you this could be where the word goes");
        }
-}
+    }
 }

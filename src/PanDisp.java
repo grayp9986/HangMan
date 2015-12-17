@@ -1,23 +1,30 @@
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+public class PanDisp extends JPanel {
 
-/**
- *
- * @author grayp9986
- */
-public class PanDisp extends JPanel{
+    JLabel lblOutput;
+    JButton btnUpdateLabel;
 
-    PanDisp(JLabel lblOutput, JButton btnUpdateLabel) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public PanDisp() {//Constructor
+        lblOutput = new JLabel();
+        btnUpdateLabel = new JButton();
+        lblOutput = new JLabel("*****");
+        btnUpdateLabel = new JButton("Enter");
+        add(lblOutput);
+        add(btnUpdateLabel);
+        setFocusable(true);
+        LabelChangeListener labelChange = new LabelChangeListener();
+        btnUpdateLabel.addActionListener(labelChange);
     }
-    public void PanDisp(JLabel _lblOutput,JButton _btnUpdateLabel){
-        
+    class LabelChangeListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            lblOutput.setText("**a**");
+        }
     }
 }

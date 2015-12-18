@@ -13,14 +13,17 @@ public class PanDisp extends JPanel {
 
     JLabel lblOutput;
     JButton btnUpdateLabel;
+    JLabel lblGuess;
 
     public PanDisp() {//Constructor
         KeyInput keyInput = new KeyInput();
         lblOutput = new JLabel();
         btnUpdateLabel = new JButton();
         lblOutput = new JLabel("*****");
+        lblGuess = new JLabel("");
         btnUpdateLabel = new JButton("Enter");
         add(lblOutput);
+        add(lblGuess);
         add(btnUpdateLabel);
         addKeyListener(new KeyInput());
         setFocusable(true);
@@ -29,7 +32,7 @@ public class PanDisp extends JPanel {
     }
     class LabelChangeListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            lblOutput.setText("**a**");
+            lblOutput.setText("*****");
         }
     }
     class KeyInput implements KeyListener {
@@ -49,7 +52,7 @@ public class PanDisp extends JPanel {
         public void keyPressed(KeyEvent e) {
         chInput = (char) e.getKeyChar();
         sInput = String.valueOf(chInput); // convert the char to a String
-        lblOutput.setText(sInput);
+        lblGuess.setText(sInput);
         }
         @Override
         public void keyReleased(KeyEvent e) {

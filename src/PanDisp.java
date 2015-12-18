@@ -43,19 +43,16 @@ public class PanDisp extends JPanel {
 
         @Override
         public void keyTyped(KeyEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         chInput = (char) e.getKeyChar();
         sInput = String.valueOf(chInput); // convert the char to a String
         lblOutput.setText(sInput);
         }
         @Override
         public void keyReleased(KeyEvent e) {
-
         }
     }
 }
